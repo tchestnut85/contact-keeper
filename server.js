@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 5000;
 // Connect to the database
 connectDB();
 
+// Express middleware
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.json({ message: 'Welcome to the Contact Keeper API!' }));
 
 // Setup Routes
