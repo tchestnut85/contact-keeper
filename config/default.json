@@ -1,0 +1,4 @@
+{
+	"mongoURI": "mongodb+srv://tom:poplar1018@contactkeeper.psdsb.mongodb.net/contactkeeper?retryWrites=true&w=majority",
+	"secret": "supersecretshhh"
+}
