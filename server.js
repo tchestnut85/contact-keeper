@@ -1,7 +1,10 @@
 const express = require('express');
-
+const connectDB = require('./config/db');
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Connect to the database
+connectDB();
 
 app.get('/', (req, res) => res.json({ message: 'Welcome to the Contact Keeper API!' }));
 
