@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const config = require('config');
 const { check, validationResult } = require('express-validator');
 
 const User = require('../models/User');
+const mySecret = process.env.JWT_SECRET;
 
 // POST a new user to /api/users
 router.post(
@@ -49,7 +49,7 @@ router.post(
 
 			jwt.sign(
 				payload,
-				config.get('secret'),
+				mySecret,
 				{
 					expiresIn: '1h',
 				},
