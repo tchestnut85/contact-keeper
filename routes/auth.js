@@ -8,6 +8,7 @@ const auth = require('../middleware/auth');
 const mySecret = process.env.JWT_SECRET;
 
 // GET users at /api/auth
+// Private
 router.get('/', auth, async (req, res) => {
 	try {
 		const user = await User.findById(req.user.id).select('-password');
@@ -19,6 +20,7 @@ router.get('/', auth, async (req, res) => {
 });
 
 // POST to login a user at /api/auth
+
 router.post(
 	'/',
 	[
