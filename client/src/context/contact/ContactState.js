@@ -1,12 +1,4 @@
-import {
-	ADD_CONTACT,
-	CLEAR_CURRENT,
-	CLEAR_FILTER,
-	DELETE_CONTACT,
-	FILTER_CONTACTS,
-	SET_CURRENT,
-	UPDATE_CONTACT,
-} from '../actions';
+import { ADD_CONTACT, DELETE_CONTACT } from '../actions';
 import React, { useReducer } from 'react';
 
 import ContactContext from './contactContext';
@@ -49,6 +41,9 @@ const ContactState = props => {
 	};
 
 	// Delete contact
+	const deleteContact = id => {
+		dispatch({ type: DELETE_CONTACT, payload: id });
+	};
 
 	// Set current contact
 
@@ -65,6 +60,7 @@ const ContactState = props => {
 			value={{
 				contacts: state.contacts,
 				addContact,
+				deleteContact,
 			}}
 		>
 			{props.children}
