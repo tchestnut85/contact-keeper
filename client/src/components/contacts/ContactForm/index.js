@@ -60,14 +60,16 @@ const ContactForm = () => {
 				name='type'
 				value='personal'
 				checked={type === 'personal'}
-			/>
+				onChange={onChange}
+			/>{' '}
 			Personal{' '}
 			<input
 				type='radio'
 				name='type'
 				value='professional'
 				checked={type === 'professional'}
-			/>
+				onChange={onChange}
+			/>{' '}
 			Professional{' '}
 			<div>
 				<button type='submit' className='btn btn-primary btn-block'>
