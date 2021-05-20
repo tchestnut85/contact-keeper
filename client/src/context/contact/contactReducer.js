@@ -1,7 +1,9 @@
 import {
 	ADD_CONTACT,
 	CLEAR_CURRENT,
+	CLEAR_FILTER,
 	DELETE_CONTACT,
+	FILTER_CONTACTS,
 	SET_CURRENT,
 	UPDATE_CONTACT,
 } from '../actions';
@@ -37,6 +39,22 @@ const reducer = (state, action) => {
 				...state,
 				current: null,
 			};
+		case FILTER_CONTACTS:
+			return {
+				...state,
+				filtered: state.contacts.filter(contact => {
+					const regex = new RegExp(`${action.payload}`, 'gi');
+					return (
+						contact.name.match(regex) || contact.email.match(regex)
+					);
+				}),
+			};
+		case CLEAR_FILTER:
+			return {
+				...state,
+				filtered: null,
+			};
+
 		default:
 			return state;
 	}
