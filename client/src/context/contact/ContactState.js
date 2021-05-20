@@ -3,6 +3,7 @@ import {
 	CLEAR_CURRENT,
 	DELETE_CONTACT,
 	SET_CURRENT,
+	UPDATE_CONTACT,
 } from '../actions';
 import React, { useReducer } from 'react';
 
@@ -62,6 +63,9 @@ const ContactState = props => {
 	};
 
 	// Update contact
+	const updateContact = contact => {
+		dispatch({ type: UPDATE_CONTACT, payload: contact });
+	};
 
 	// Filter contacts
 
@@ -76,6 +80,7 @@ const ContactState = props => {
 				deleteContact,
 				setCurrent,
 				clearCurrent,
+				updateContact,
 			}}
 		>
 			{props.children}
