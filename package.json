@@ -1,0 +1,37 @@
+{
+	"name": "contact-keeper",
+	"version": "1.0.0",
+	"description": "React Contact Keeper App",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"server": "nodemon server.js",
+		"client": "npm start --prefix client",
+		"clientinstall": "npm install --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tchestnut85/contact-keeper.git"
+	},
+	"keywords": [],
+	"author": "Tom Chestnut",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/tchestnut85/contact-keeper/issues"
+	},
+	"homepage": "https://github.com/tchestnut85/contact-keeper#readme",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"config": "^3.3.6",
+		"dotenv": "^9.0.2",
+		"express": "^4.17.1",
+		"express-validator": "^6.11.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.12.8"
+	},
+	"devDependencies": {
+		"concurrently": "^6.1.0",
+		"nodemon": "^2.0.7"
+	}
+}
