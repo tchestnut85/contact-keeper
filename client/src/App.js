@@ -10,12 +10,13 @@ import ContactState from './context/contact/ContactState';
 import Home from './pages/Home';
 import Login from './components/auth/Login';
 import Navbar from './components/layout/Navbar';
+import PrivateRoute from './components/PrivateRoute';
 import React from 'react';
 import Register from './components/auth/Register';
 import setAuthToken from './utils/setAuthToken';
 
-if (localStorage.token) {
-	setAuthToken(localStorage.token);
+if (localStorage.contactsAppToken) {
+	setAuthToken(localStorage.contactsAppToken);
 }
 
 const App = () => {
@@ -29,7 +30,11 @@ const App = () => {
 							<div className='container'>
 								<Alerts />
 								<Switch>
-									<Route exact path='/' component={Home} />
+									<PrivateRoute
+										exact
+										path='/'
+										component={Home}
+									/>
 									<Route
 										exact
 										path='/about'
