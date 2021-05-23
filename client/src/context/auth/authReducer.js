@@ -18,6 +18,7 @@ const authReducer = (state, action) => {
 				loading: false,
 				user: action.payload,
 			};
+		case LOGIN_SUCCESS:
 		case REGISTER_SUCCESS:
 			localStorage.setItem('contactsAppToken', action.payload.token);
 			return {
@@ -28,6 +29,7 @@ const authReducer = (state, action) => {
 			};
 		case AUTH_ERROR:
 		case REGISTER_FAIL:
+		case LOGIN_FAIL:
 			localStorage.removeItem('contactsAppToken');
 			return {
 				...state,
