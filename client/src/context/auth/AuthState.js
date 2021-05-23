@@ -3,6 +3,7 @@ import {
 	CLEAR_ERRORS,
 	LOGIN_FAIL,
 	LOGIN_SUCCESS,
+	LOGOUT,
 	REGISTER_FAIL,
 	REGISTER_SUCCESS,
 	USER_LOADED,
@@ -89,6 +90,9 @@ const AuthState = props => {
 		}
 	};
 
+	// Logout user
+	const logout = () => dispatch({ type: LOGOUT });
+
 	// Clear errors
 	const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
@@ -104,6 +108,7 @@ const AuthState = props => {
 				clearErrors,
 				loadUser,
 				login,
+				logout,
 			}}
 		>
 			{props.children}
